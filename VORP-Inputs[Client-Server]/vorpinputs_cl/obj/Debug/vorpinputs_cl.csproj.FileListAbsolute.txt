@@ -1,0 +1,5 @@
+E:\VORP-Repos\VORP-Inputs\VORP-Inputs[Client-Server]\build\vorp_inputs\vorpinputs_cl.net.dll
+E:\VORP-Repos\VORP-Inputs\VORP-Inputs[Client-Server]\build\vorp_inputs\vorpinputs_cl.net.pdb
+E:\VORP-Repos\VORP-Inputs\VORP-Inputs[Client-Server]\vorpinputs_cl\obj\Debug\vorpinputs_cl.csprojAssemblyReference.cache
+E:\VORP-Repos\VORP-Inputs\VORP-Inputs[Client-Server]\vorpinputs_cl\obj\Debug\vorpinputs_cl.net.dll
+E:\VORP-Repos\VORP-Inputs\VORP-Inputs[Client-Server]\vorpinputs_cl\obj\Debug\vorpinputs_cl.net.pdb
