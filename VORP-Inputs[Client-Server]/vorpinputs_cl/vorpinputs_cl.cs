@@ -44,7 +44,7 @@ namespace vorpinputs_cl
         public async Task WaitToInputs(string title, string placeholder, dynamic cb)
         {
             API.SetNuiFocus(true, true);
-            string json = "{\"type\": \"enableinput\",\"style\": \"block\",\"title\": \"Ejemplo Titulo\",\"placeholder\": \"Ejemplo placeholder\"}";
+            string json = "{\"type\": \"enableinput\",\"style\": \"block\",\"title\": \"" + title + "\",\"placeholder\": \"" + placeholder + "\"}";
             API.SendNuiMessage(json);
 
             while (text == null)
