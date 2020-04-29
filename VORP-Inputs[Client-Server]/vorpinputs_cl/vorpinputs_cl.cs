@@ -15,8 +15,8 @@ namespace vorpinputs_cl
 
         public vorpinputs_cl()
         {
-            API.RegisterCommand("openi", new Action(OpenInput), false);
-            API.RegisterCommand("closei", new Action(CloseInput), false);
+            //API.RegisterCommand("openi", new Action(OpenInput), false);
+            API.RegisterCommand("closeinput", new Action(CloseInput), false);
 
             EventHandlers["vorpinputs:getInput"] += new Action<string, string, dynamic>(getInputs);
             API.RegisterNuiCallbackType("submit");
@@ -33,13 +33,13 @@ namespace vorpinputs_cl
             WaitToInputs(title, placeholder, cb);
         }
 
-        private void OpenInput()
-        {
-            TriggerEvent("vorpinputs:getInput", "a", "b", new Action<dynamic>((cb) =>
-            {
-                Debug.WriteLine(cb);
-            }));
-        }
+        //private void OpenInput()
+        //{
+        //    TriggerEvent("vorpinputs:getInput", "title", "placeholder", new Action<dynamic>((cb) =>
+        //    {
+        //        Debug.WriteLine(cb);
+        //    }));
+        //}
 
         public async Task WaitToInputs(string title, string placeholder, dynamic cb)
         {
