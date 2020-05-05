@@ -15,7 +15,6 @@ namespace vorpinputs_cl
 
         public vorpinputs_cl()
         {
-            //API.RegisterCommand("openi", new Action(OpenInput), false);
             API.RegisterCommand("closeinput", new Action(CloseInput), false);
 
             EventHandlers["vorpinputs:getInput"] += new Action<string, string, dynamic>(getInputs);
@@ -33,18 +32,10 @@ namespace vorpinputs_cl
             WaitToInputs(title, placeholder, cb);
         }
 
-        //private void OpenInput()
-        //{
-        //    TriggerEvent("vorpinputs:getInput", "title", "placeholder", new Action<dynamic>((cb) =>
-        //    {
-        //        Debug.WriteLine(cb);
-        //    }));
-        //}
-
-        public async Task WaitToInputs(string title, string placeholder, dynamic cb)
+        public async Task WaitToInputs(string button, string placeholder, dynamic cb)
         {
             API.SetNuiFocus(true, true);
-            string json = "{\"type\": \"enableinput\",\"style\": \"block\",\"title\": \"" + title + "\",\"placeholder\": \"" + placeholder + "\"}";
+            string json = "{\"type\": \"enableinput\",\"style\": \"block\",\"button\": \"" + button + "\",\"placeholder\": \"" + placeholder + "\"}";
             API.SendNuiMessage(json);
 
             while (text == null)
@@ -54,9 +45,9 @@ namespace vorpinputs_cl
 
             cb.Invoke(text);
 
+            await Delay(1);
             text = null;
             CloseInput();
-
         }
 
         private void CloseInput()
