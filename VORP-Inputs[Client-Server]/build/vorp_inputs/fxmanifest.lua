@@ -8,9 +8,8 @@ client_scripts {
 
 files {
   'html/input.html',
-  'html/fonts/rdrlino-regular-webfont.woff',
-  'html/script.js',
-  'html/style.css',
+  'html/assets/script.js',
+  'html/assets/css/style.min.css',
 }
 
 ui_page 'html/input.html'
