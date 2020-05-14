@@ -3,7 +3,7 @@ $(function() {
         if (event.data.type == "enableinput") {
             document.body.style.display = event.data.style;
             if (event.data.style == "block") {
-                document.getElementById("subButton").innerText = event.data.button;
+                document.getElementById("subButton").innerHTML = event.data.button;
                 document.getElementById("inputUser").placeholder = event.data.placeholder;
             }
         }
