@@ -5,6 +5,7 @@ $(function() {
             if (event.data.style == "block") {
                 document.getElementById("subButton").innerHTML = event.data.button;
                 document.getElementById("inputUser").placeholder = event.data.placeholder;
+                document.getElementById("inputUser").value = "";
             }
         }
     });
