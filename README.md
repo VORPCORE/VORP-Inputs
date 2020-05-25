@@ -1,2 +1,2 @@
 # VORP-Inputs
-Input UI for programing (more info in wiki or discord)
+[Wiki VORP CORE Inputs](https://forum.vorpcore.com/d/7-api-vorp-inputs)
