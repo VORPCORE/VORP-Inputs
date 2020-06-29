@@ -12,4 +12,4 @@
 * Now you are ready!
 
 ## Wiki
-[Wiki VORP Inputs](https://forum.vorpcore.com/d/7-api-vorp-inputs)
+[Wiki VORP Inputs](http://docs.vorpcore.com:3000/vorp-inputs)
