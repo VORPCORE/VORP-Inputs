@@ -1,6 +1,8 @@
 # VORP-Inputs
 ⌨️Inputs that show on the screen
 
+![](http://docs.vorpcore.com:3000/inputs.png)
+
 ## Requirements
 - [VORP-CORE](https://github.com/VORPCORE/VORP-Core)
 
