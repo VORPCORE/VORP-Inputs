@@ -12,7 +12,7 @@ You can see the [API here](http://docs.vorpcore.com:3000/vorp-inputs)
 * [Download the lastest version of VORP Inputs](https://github.com/VORPCORE/VORP-Inputs/releases)
 * Copy and paste ```vorp_inputs``` folder to ```resources/vorp_inputs```
 * Add ```ensure vorp_inputs``` to your ```server.cfg``` file
-* To change the language go to ```resources/vorp_inputs``` and change the default language
+* To change the language go to ```resources/vorp_inputs/Config``` and change the default language
 * Now you are ready!
 
 ## Wiki
