@@ -4,7 +4,7 @@
 ![](http://docs.vorpcore.com:3000/inputs.png)
 
 
-You can see the [api here](http://docs.vorpcore.com:3000/vorp-inputs)
+You can see the [API here](http://docs.vorpcore.com:3000/vorp-inputs)
 ## Requirements
 - [VORP-CORE](https://github.com/VORPCORE/VORP-Core)
 
