@@ -6,7 +6,7 @@
 
 You can see the [API here](http://docs.vorpcore.com:3000/vorp-inputs)
 ## Requirements
-- [VORP-CORE](https://github.com/VORPCORE/VORP-Core)
+- [VORP-Core](https://github.com/VORPCORE/VORP-Core)
 
 ## How to install
 * [Download the lastest version of VORP Inputs](https://github.com/VORPCORE/VORP-Inputs/releases)
