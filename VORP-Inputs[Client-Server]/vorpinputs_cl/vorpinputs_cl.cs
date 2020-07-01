@@ -18,8 +18,17 @@ namespace vorpinputs_cl
             API.RegisterCommand("closeinput", new Action(CloseInput), false);
 
             EventHandlers["vorpinputs:getInput"] += new Action<string, string, dynamic>(getInputs);
+
             API.RegisterNuiCallbackType("submit");
             EventHandlers["__cfx_nui:submit"] += new Action<ExpandoObject>(SetSubmit);
+
+            API.RegisterNuiCallbackType("close");
+            EventHandlers["__cfx_nui:close"] += new Action<ExpandoObject>(SetClose);
+        }
+
+        private void SetClose(dynamic result)
+        {
+            text = result.stringtext;
         }
 
         private void SetSubmit(dynamic result)
