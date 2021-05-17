@@ -18,7 +18,8 @@ $(function() {
         }
     };
 
-    $("#notButton").click(function() {
+    $("#notButton").click(function(event) {
+        event.preventDefault();
         $.post('http://vorp_inputs/close', JSON.stringify({
             stringtext: "close"
         }));
