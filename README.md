@@ -1,7 +1,8 @@
-# VORP-Inputs
+## VORP-Inputs NEW 2022
 ⌨️Inputs that show on the screen
 
-![](http://docs.vorpcore.com:3000/inputs.png)
+<img width="507" alt="image" src="https://user-images.githubusercontent.com/87246847/158713214-8bcef969-2805-4cee-b489-3c1fd96acecc.png">
+
 
 
 You can see the [API here](http://docs.vorpcore.com:3000/vorp-inputs)
