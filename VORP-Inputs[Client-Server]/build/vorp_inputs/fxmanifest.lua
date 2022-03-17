@@ -7,9 +7,7 @@ client_scripts {
 }
 
 files {
-  'html/input.html',
-  'html/assets/script.js',
-  'html/assets/css/styles.min.css',
+   'html/**/*'
 }
 
 ui_page 'html/input.html'
