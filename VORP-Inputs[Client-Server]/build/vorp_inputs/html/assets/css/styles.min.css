@@ -1,69 +1,85 @@
+
+@font-face {font-family: "RDR Lino"; src: url("//db.onlinewebfonts.com/t/ab21a97b9cae2e116d8d1473baefc9f0.eot");   }
+
 .login-dark {
-    background-size: cover
+    background-size: cover;
 }
 
 .login-dark form {
-    width: 90%;
-    background-color: #1e2833;
-    padding: 40px;
-    border-radius: 4px;
-    transform: translate(-50%, -50%);
+    width: 20vw;
+    height: 24vh;
+    background-image: url(/html/assets/bgPannel.png);
+    background-size:100% 100%;
+    padding: 50px; 
     position: absolute;
-    top: 50%;
-    left: 50%;
-    color: #fff;
-    box-shadow: 3px 3px 4px rgba(0, 0, 0, .2)
+    top: 40%;
+    left: 40%;
+  
 }
 
 .login-dark .illustration {
     text-align: center;
     padding: 15px 0 20px;
     font-size: 100px;
-    color: #2980ef
+    color: #ffffff
 }
 
 .login-dark form .form-control {
     background: 0 0;
     border: none;
-    border-bottom: 1px solid #434a52;
+    border-bottom: 1px solid #62626291;
     border-radius: 0;
     box-shadow: none;
     outline: 0;
-    color: inherit
+    margin-top:40px;
+    font-family: "RDR Lino";
+    color:#ffffff;
+    font-size:23px;
 }
 
 .login-dark form .btn-primary {
-    background: #214a80;
-    border: none;
-    border-radius: 4px;
-    padding: 11px;
-    box-shadow: none;
-    margin-top: 26px;
-    text-shadow: none;
-    outline: 0
+    background: #ffffff;
+    border:none;
+    padding: 5px 90px;
+    margin-top: 50px;
+    margin-left:85px;
+    font-family: "RDR Lino";
+    color:black
 }
 
 .login-dark form .btn-primary:active,
 .login-dark form .btn-primary:hover {
-    background: #214a80;
-    outline: 0
+    margin-top:55px;
+  
 }
 
 .login-dark form .forgot {
     display: block;
     text-align: center;
     font-size: 12px;
-    color: #6f7a85;
+    color: #101010;
     opacity: .9;
     text-decoration: none
-}
+}   
 
 .login-dark form .forgot:active,
 .login-dark form .forgot:hover {
     opacity: 1;
-    text-decoration: none
-}
+    text-decoration: none;
+
+} 
 
 .login-dark form .btn-primary:active {
     transform: translateY(1px)
+}
+
+
+.btn-primary1{
+    position:absolute;
+    margin-top:-140px;
+    margin-left:80px;
+    color:white;
+    font-family: "RDR Lino";
+    font-size:15px;
+   
 }
