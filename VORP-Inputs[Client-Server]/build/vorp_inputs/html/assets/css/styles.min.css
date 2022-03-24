@@ -73,7 +73,6 @@
     transform: translateY(1px)
 }
 
-
 .btn-primary1{
     position:absolute;
     margin-top:-140px;
@@ -82,4 +81,42 @@
     font-family: "RDR Lino";
     font-size:15px;
    
+}
+
+
+@media (max-width:1920px){
+
+.login-dark form {
+    width: 25vw;
+    height: 28vh;
+  
+}
+
+.btn-primary1{
+    margin-top:-140px;
+    margin-left:50px; 
+}
+
+}
+
+
+@media (min-width:3840px){
+
+.login-dark form {  
+    width: 15vw;
+    height: 18vh;
+
+  
+}
+
+.login-dark form .btn-primary {
+    margin-left:123px;
+
+}
+
+.btn-primary1{
+    margin-top:-150px;
+    margin-left:100px; 
+}
+
 }
