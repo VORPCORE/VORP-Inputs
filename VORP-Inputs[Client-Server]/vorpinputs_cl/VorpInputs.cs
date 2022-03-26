@@ -1,19 +1,16 @@
 ﻿using CitizenFX.Core;
 using CitizenFX.Core.Native;
 using System;
-using System.Collections.Generic;
 using System.Dynamic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace vorpinputs_cl
 {
-    public class vorpinputs_cl : BaseScript
+    public class VorpInputs : BaseScript
     {
         static string text = null;
 
-        public vorpinputs_cl()
+        public VorpInputs()
         {
             API.RegisterCommand("closeinput", new Action(CloseInput), false);
 
