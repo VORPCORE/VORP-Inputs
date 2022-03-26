@@ -7,7 +7,8 @@ client_scripts {
 }
 
 files {
-   'html/**/*'
+   'html/**/*',
+   'Newtonsoft.Json.dll'
 }
 
 ui_page 'html/input.html'
