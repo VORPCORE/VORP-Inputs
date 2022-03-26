@@ -42,7 +42,7 @@ namespace vorpinputs_cl
             WaitToInputs(title, placeholder, cb);
         }
 
-        private void getInputsWithInputType(string title, string placeholder, string inputType = "text", dynamic cb) {
+        private void getInputsWithInputType(string title, string placeholder, string inputType, dynamic cb) {
             WaitToInputs(title, placeholder, cb, inputType);  
         } 
 

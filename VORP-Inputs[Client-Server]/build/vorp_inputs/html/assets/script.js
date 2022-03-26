@@ -10,7 +10,7 @@ $(function() {
                 document.getElementById("inputUser").placeholder = event.data.placeholder;
                 document.getElementById("inputUser").value = "";
             }
-            document.getElementById('inputUser').autofocus = true
+            $("#inputUser").focus()
         }
     });
 
