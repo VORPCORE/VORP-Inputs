@@ -3,6 +3,7 @@ using CitizenFX.Core.Native;
 using System;
 using System.Dynamic;
 using System.Threading.Tasks;
+using vorpinputs_cl.Models;
 
 namespace vorpinputs_cl
 {
@@ -46,8 +47,14 @@ namespace vorpinputs_cl
         public async Task WaitToInputs(string button, string placeholder, dynamic cb, string inputType = "text")
         {
             API.SetNuiFocus(true, true);
-            string json = "{\"type\": \"enableinput\",\"style\": \"block\",\"button\": \"" + button + "\",\"placeholder\": \"" + placeholder + "\", \"inputType\": \"" + inputType + "\" }";
-            API.SendNuiMessage(json);
+
+            InputMessage msg = new();
+            msg.Style = "block";
+            msg.ButtonText = button;
+            msg.InputPlaceholder = placeholder;
+            msg.InputType = inputType;
+
+            API.SendNuiMessage($"{msg}");
 
             while (text == null)
             {
@@ -65,9 +72,10 @@ namespace vorpinputs_cl
         {
             API.SetNuiFocus(false, false);
 
-            string json = "{\"type\": \"enableinput\",\"style\": \"none\"}";
+            InputMessage msg = new();
+            msg.Style = "none";
 
-            API.SendNuiMessage(json);
+            API.SendNuiMessage($"{msg}");
         }
 
     }
