@@ -18,6 +18,7 @@ namespace vorpinputs_cl
             API.RegisterCommand("closeinput", new Action(CloseInput), false);
 
             EventHandlers["vorpinputs:getInput"] += new Action<string, string, dynamic>(getInputs);
+            EventHandlers["vorpinputs:getInputsWithInputType"] += new Action<string, string, string, dynamic>(getInputsWithInputType);
 
             API.RegisterNuiCallbackType("submit");
             EventHandlers["__cfx_nui:submit"] += new Action<ExpandoObject>(SetSubmit);
@@ -41,10 +42,14 @@ namespace vorpinputs_cl
             WaitToInputs(title, placeholder, cb);
         }
 
-        public async Task WaitToInputs(string button, string placeholder, dynamic cb)
+        private void getInputsWithInputType(string title, string placeholder, string inputType, dynamic cb) {
+            WaitToInputs(title, placeholder, cb, inputType);  
+        } 
+
+        public async Task WaitToInputs(string button, string placeholder, dynamic cb, string inputType = "text")
         {
             API.SetNuiFocus(true, true);
-            string json = "{\"type\": \"enableinput\",\"style\": \"block\",\"button\": \"" + button + "\",\"placeholder\": \"" + placeholder + "\"}";
+            string json = "{\"type\": \"enableinput\",\"style\": \"block\",\"button\": \"" + button + "\",\"placeholder\": \"" + placeholder + "\", \"inputType\": \"" + inputType + "\" }";
             API.SendNuiMessage(json);
 
             while (text == null)

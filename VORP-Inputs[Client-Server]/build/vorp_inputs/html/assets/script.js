@@ -2,11 +2,15 @@ $(function() {
     window.addEventListener('message', function(event) {
         if (event.data.type == "enableinput") {
             document.body.style.display = event.data.style;
+            if (event.data.inputType) {
+                document.getElementById('inputUser').type = event.data.inputType
+            }
             if (event.data.style == "block") {
                 document.getElementById("subButton").innerHTML = event.data.button;
                 document.getElementById("inputUser").placeholder = event.data.placeholder;
                 document.getElementById("inputUser").value = "";
             }
+            $("#inputUser").focus()
         }
     });
 
