@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Runtime.Serialization;
 
-namespace vorpinputs_cl.Models
+namespace VorpInputs.Models
 {
     [DataContract]
     public class InputMessage
