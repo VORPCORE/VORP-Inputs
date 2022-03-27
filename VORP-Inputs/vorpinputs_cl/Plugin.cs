@@ -26,9 +26,22 @@ namespace VorpInputs
             EventHandlers["__cfx_nui:close"] += new Action<ExpandoObject>(SetClose);
         }
 
-        private void OnAdvancedInput(string inputConfig, dynamic callback)
+        private async void OnAdvancedInput(string inputConfig, dynamic callback)
         {
-            
+            API.SetNuiFocus(true, true);
+
+            API.SendNuiMessage(inputConfig);
+
+            while (text == null)
+            {
+                await Delay(1);
+            }
+
+            callback.Invoke(text);
+
+            await Delay(1);
+            text = null;
+            CloseInput();
         }
 
         private void SetClose(dynamic result)
