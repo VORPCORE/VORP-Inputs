@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace VorpInputs.Models
@@ -7,7 +8,7 @@ namespace VorpInputs.Models
     public class InputMessage
     {
         [DataMember(Name = "type")]
-        public string Type { get; } = "enableinput";
+        public string Type = "enableinput";
 
         [DataMember(Name = "style")]
         public string Style;
@@ -20,6 +21,9 @@ namespace VorpInputs.Models
 
         [DataMember(Name = "inputType")]
         public string InputType;
+
+        [DataMember(Name = "attributes")]
+        public Dictionary<string, string> Attributes = new();
 
         public override string ToString()
         {

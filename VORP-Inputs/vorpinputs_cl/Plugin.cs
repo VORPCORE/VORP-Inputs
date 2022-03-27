@@ -17,12 +17,31 @@ namespace VorpInputs
 
             EventHandlers["vorpinputs:getInput"] += new Action<string, string, dynamic>(getInputs);
             EventHandlers["vorpinputs:getInputsWithInputType"] += new Action<string, string, string, dynamic>(getInputsWithInputType);
+            EventHandlers["vorpinputs:advancedInput"] += new Action<string, dynamic>(OnAdvancedInput);
 
             API.RegisterNuiCallbackType("submit");
             EventHandlers["__cfx_nui:submit"] += new Action<ExpandoObject>(SetSubmit);
 
             API.RegisterNuiCallbackType("close");
             EventHandlers["__cfx_nui:close"] += new Action<ExpandoObject>(SetClose);
+        }
+
+        private async void OnAdvancedInput(string inputConfig, dynamic callback)
+        {
+            API.SetNuiFocus(true, true);
+
+            API.SendNuiMessage(inputConfig);
+
+            while (text == null)
+            {
+                await Delay(1);
+            }
+
+            callback.Invoke(text);
+
+            await Delay(1);
+            text = null;
+            CloseInput();
         }
 
         private void SetClose(dynamic result)

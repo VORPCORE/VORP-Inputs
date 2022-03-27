@@ -1,38 +1,59 @@
-$(function() {
-    window.addEventListener('message', function(event) {
-        if (event.data.type == "enableinput") {
-            document.body.style.display = event.data.style;
-            if (event.data.inputType) {
-                document.getElementById('inputUser').type = event.data.inputType
-            }
-            if (event.data.style == "block") {
-                document.getElementById("subButton").innerHTML = event.data.button;
-                document.getElementById("inputUser").placeholder = event.data.placeholder;
-                document.getElementById("inputUser").value = "";
-            }
-            $("#inputUser").focus()
+$(function () {
+  window.addEventListener("message", function (event) {
+    if (event.data.type == "enableinput") {
+      const data = event.data;
+      document.body.style.display = data.style;
+
+      const inputEle = document.getElementById("inputUser");
+      const buttonEle = document.getElementById("subButton");
+
+      if (event.data.inputType) {
+        inputEle.type = data.inputType;
+      }
+
+      if (data.style == "block") {
+        buttonEle.innerHTML = data.button;
+        inputEle.placeholder = data.placeholder;
+        inputEle.value = data?.attributes?.value ?? "";
+
+        for (const key in data?.attributes) {
+          inputEle.setAttribute(`${key}`, `${data.attributes[key]}`);
         }
-    });
+      }
 
-    document.onkeyup = function(data) {
-        if (data.which == 27) { // Escape key
-            $.post('http://vorp_inputs/close', JSON.stringify({
-                stringtext: "close"
-            }));
-        }
-    };
+      $("#inputUser").focus();
+    }
+  });
 
-    $("#notButton").click(function() {
-        $.post('http://vorp_inputs/close', JSON.stringify({
-            stringtext: "close"
-        }));
-    });
+  document.onkeyup = function (data) {
+    if (data.which == 27) {
+      // Escape key
+      $.post(
+        "http://vorp_inputs/close",
+        JSON.stringify({
+          stringtext: "close",
+        })
+      );
+    }
+  };
 
-    $("#formInputs").submit(function(event) {
-        //event.preventDefault(); // Prevent form from submitting
+  $("#notButton").click(function () {
+    $.post(
+      "http://vorp_inputs/close",
+      JSON.stringify({
+        stringtext: "close",
+      })
+    );
+  });
 
-        $.post('http://vorp_inputs/submit', JSON.stringify({
-            stringtext: $("#inputUser").val()
-        }));
-    });
+  $("#formInputs").submit(function (event) {
+    //event.preventDefault(); // Prevent form from submitting
+
+    $.post(
+      "http://vorp_inputs/submit",
+      JSON.stringify({
+        stringtext: $("#inputUser").val(),
+      })
+    );
+  });
 });
