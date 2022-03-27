@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "npx tailwindcss -i ./src/assets/css/styles.min.css -o ../VORP-Inputs/build/vorp_inputs/html/assets/css/styles.min.css --watch"
+    "build": "npx tailwindcss -i ./src/assets/css/styles.min.css -o ../VORP-Inputs/build/vorp_inputs/html/assets/css/styles.min.css",
+    "watch": "npx tailwindcss -i ./src/assets/css/styles.min.css -o ../VORP-Inputs/build/vorp_inputs/html/assets/css/styles.min.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.23"
