@@ -1,122 +1,36 @@
-
-@font-face {font-family: "RDR Lino"; src: url("//db.onlinewebfonts.com/t/ab21a97b9cae2e116d8d1473baefc9f0.eot");   }
-
-.login-dark {
-    background-size: cover;
+@font-face {
+    font-family: 'Hapna Slab Serif DemiBold';
+    src: url('/html/assets/fonts/HapnaSlabSerif-DemiBold.ttf') format('truetype')
 }
 
-.login-dark form {
-    width: 20vw;
-    height: 24vh;
-    background-image: url(/html/assets/bgPannel.png);
-    background-size:100% 100%;
-    padding: 50px; 
-    position: absolute;
-    top: 40%;
-    left: 40%;
-  
+@font-face {
+    font-family: 'RDR Lino Regular';
+    src: url('/html/assets/fonts/rdr-lino/ab21a97b9cae2e116d8d1473baefc9f0.eot');
+    /* IE9*/
+    src: url('/html/assets/fonts/rdr-lino/ab21a97b9cae2e116d8d1473baefc9f0.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('/html/assets/fonts/rdr-lino/ab21a97b9cae2e116d8d1473baefc9f0.woff2') format('woff2'),
+        /* chrome、firefox */
+        url('/html/assets/fonts/rdr-lino/ab21a97b9cae2e116d8d1473baefc9f0.woff') format('woff'),
+        /* chrome、firefox */
+        url('/html/assets/fonts/rdr-lino/ab21a97b9cae2e116d8d1473baefc9f0.ttf') format('truetype'),
+        /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        url('/html/assets/fonts/rdr-lino/ab21a97b9cae2e116d8d1473baefc9f0.svg#RDR Lino Regular') format('svg');
+    /* iOS 4.1- */
 }
 
-.login-dark .illustration {
-    text-align: center;
-    padding: 15px 0 20px;
-    font-size: 100px;
-    color: #ffffff
+html,
+body {
+    font-family: "Hapna Slab Serif DemiBold";
+    color: #ccc;
 }
 
-.login-dark form .form-control {
-    background: 0 0;
-    border: none;
-    border-bottom: 1px solid #62626291;
-    border-radius: 0;
-    box-shadow: none;
-    outline: 0;
-    margin-top:40px;
-    font-family: "RDR Lino";
-    color:#ffffff;
-    font-size:23px;
+.bg-form {
+    background-image: url('/html/assets/bgPannel.png');
+    background-size: 100% 100%;
+    background-position: top center;
 }
 
-.login-dark form .btn-primary {
-    background: #ffffff;
-    border:none;
-    padding: 5px 90px;
-    margin-top: 50px;
-    margin-left:85px;
-    font-family: "RDR Lino";
-    color:black
-}
-
-.login-dark form .btn-primary:active,
-.login-dark form .btn-primary:hover {
-    margin-top:55px;
-  
-}
-
-.login-dark form .forgot {
-    display: block;
-    text-align: center;
-    font-size: 12px;
-    color: #101010;
-    opacity: .9;
-    text-decoration: none
-}   
-
-.login-dark form .forgot:active,
-.login-dark form .forgot:hover {
-    opacity: 1;
-    text-decoration: none;
-
-} 
-
-.login-dark form .btn-primary:active {
-    transform: translateY(1px)
-}
-
-.btn-primary1{
-    position:absolute;
-    margin-top:-140px;
-    margin-left:80px;
-    color:white;
-    font-family: "RDR Lino";
-    font-size:15px;
-   
-}
-
-
-@media (max-width:1920px){
-
-.login-dark form {
-    width: 25vw;
-    height: 28vh;
-  
-}
-
-.btn-primary1{
-    margin-top:-140px;
-    margin-left:50px; 
-}
-
-}
-
-
-@media (min-width:3840px){
-
-.login-dark form {  
-    width: 15vw;
-    height: 18vh;
-
-  
-}
-
-.login-dark form .btn-primary {
-    margin-left:123px;
-
-}
-
-.btn-primary1{
-    margin-top:-150px;
-    margin-left:100px; 
-}
-
+.font-rdr-lino {
+    font-family: "RDR Lino Regular";
 }

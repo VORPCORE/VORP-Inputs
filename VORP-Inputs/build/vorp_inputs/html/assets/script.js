@@ -5,7 +5,10 @@ $(function () {
       document.body.style.display = data.style;
 
       const inputEle = document.getElementById("inputUser");
-      const buttonEle = document.getElementById("subButton");
+      const inputHeaderEle = document.getElementById("inputHeader");
+      const buttonEle = document.getElementById("submitButton");
+
+      inputHeaderEle.style.display = "none";
 
       if (event.data.inputType) {
         inputEle.type = data.inputType;
@@ -17,7 +20,12 @@ $(function () {
         inputEle.value = data?.attributes?.value ?? "";
 
         for (const key in data?.attributes) {
-          inputEle.setAttribute(`${key}`, `${data.attributes[key]}`);
+          if (key === "inputHeader") {
+            inputHeaderEle.innerHTML = data.attributes[key];
+            inputHeaderEle.style.display = "block";
+          } else {
+            inputEle.setAttribute(`${key}`, `${data.attributes[key]}`);
+          }
         }
       }
 
@@ -37,7 +45,7 @@ $(function () {
     }
   };
 
-  $("#notButton").click(function () {
+  $("#closeButton").click(function () {
     $.post(
       "http://vorp_inputs/close",
       JSON.stringify({
