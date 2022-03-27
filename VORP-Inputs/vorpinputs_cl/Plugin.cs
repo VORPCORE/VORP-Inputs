@@ -3,15 +3,15 @@ using CitizenFX.Core.Native;
 using System;
 using System.Dynamic;
 using System.Threading.Tasks;
-using vorpinputs_cl.Models;
+using VorpInputs.Models;
 
-namespace vorpinputs_cl
+namespace VorpInputs
 {
-    public class VorpInputs : BaseScript
+    public class Plugin : BaseScript
     {
         static string text = null;
 
-        public VorpInputs()
+        public Plugin()
         {
             API.RegisterCommand("closeinput", new Action(CloseInput), false);
 
