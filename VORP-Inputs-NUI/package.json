@@ -1,9 +1,15 @@
 {
   "scripts": {
-    "build": "npx tailwindcss -i ./src/assets/css/styles.min.css -o ../VORP-Inputs/build/vorp_inputs/html/assets/css/styles.min.css",
-    "watch": "npx tailwindcss -i ./src/assets/css/styles.min.css -o ../VORP-Inputs/build/vorp_inputs/html/assets/css/styles.min.css --watch"
+    "serve": "run-p server watch",
+    "build": "npx tailwindcss -i ./src/styles.css -o ../VORP-inputs/build/vorp_inputs/html/assets/css/styles.css",
+    "watch": "npx tailwindcss -i ./src/styles.css -o ./dist/assets/css/styles.css --watch",
+    "server": "node server.js"
   },
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
     "tailwindcss": "^3.0.23"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
   }
 }
