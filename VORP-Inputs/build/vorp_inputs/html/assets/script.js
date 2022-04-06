@@ -14,7 +14,6 @@ $(function () {
       if (data.style == "block") {
         buttonEle.innerHTML = data.button;
         inputEle.placeholder = data.placeholder;
-        inputEle.value = data?.attributes?.value ?? "";
 
         for (const key in data?.attributes) {
           inputEle.setAttribute(`${key}`, `${data.attributes[key]}`);
