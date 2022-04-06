@@ -6,9 +6,16 @@ $(function () {
 
       const inputEle = document.getElementById("inputUser");
       const buttonEle = document.getElementById("subButton");
+      const inputContainer = $("#vorpSingleInput");
+      const textareaContainer = $("#vorpTextarea");
 
-      if (event.data.inputType) {
-        inputEle.type = data.inputType;
+      textareaContainer.hide();
+      inputContainer.show();
+
+      if (event.data.inputType === "textarea") {
+        textareaContainer.show();
+        inputContainer.hide();
+        inputEle = document.getElementById("inpTextarea");
       }
 
       if (data.style == "block") {
@@ -20,7 +27,11 @@ $(function () {
         }
       }
 
-      $("#inputUser").focus();
+      if (textareaContainer.is(":visible")) {
+        $("#inpTextarea").focus();
+      } else {
+        $("#inputUser").focus();
+      }
     }
   });
 
@@ -47,6 +58,12 @@ $(function () {
 
   $("#formInputs").submit(function (event) {
     //event.preventDefault(); // Prevent form from submitting
+
+    var fieldValue = $("#inputUser").val();
+
+    if ($("#vorpTextarea").is(":visible")) {
+      fieldValue = $("#inpTextarea").val();
+    }
 
     $.post(
       "http://vorp_inputs/submit",
