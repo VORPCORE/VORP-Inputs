@@ -12,7 +12,7 @@ $(function () {
       textareaContainer.hide();
       inputContainer.show();
 
-      if (event.data.inputType === "textarea") {
+      if (data.inputType == "textarea") {
         textareaContainer.show();
         inputContainer.hide();
         inputEle = document.getElementById("inpTextarea");
