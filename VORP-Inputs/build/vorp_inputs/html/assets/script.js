@@ -9,13 +9,13 @@ $(function () {
       const inputContainer = $("#vorpSingleInput");
       const textareaContainer = $("#vorpTextarea");
 
-      textareaContainer.hide();
-      inputContainer.show();
-
       if (data.inputType == "textarea") {
         textareaContainer.show();
         inputContainer.hide();
         inputEle = document.getElementById("inpTextarea");
+      } else if (data.inputType == "input") {
+        textareaContainer.hide();
+        inputContainer.show();
       }
 
       if (data.style == "block") {
