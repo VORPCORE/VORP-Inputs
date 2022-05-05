@@ -6,16 +6,16 @@ $(function () {
 
       const inputEle = document.getElementById("inputUser");
       const buttonEle = document.getElementById("subButton");
-      const inputContainer = $("#vorpSingleInput");
-      const textareaContainer = $("#vorpTextarea");
+      const inputContainer = document.getElementById("vorpSingleInput");
+      const textareaContainer = document.getElementById("vorpTextarea");
 
       if (data.inputType == "textarea") {
-        textareaContainer.show();
-        inputContainer.hide();
+        textareaContainer.style.display = "unset";
+        inputContainer.style.display = "none";
         inputEle = document.getElementById("inpTextarea");
       } else if (data.inputType == "input") {
-        textareaContainer.hide();
-        inputContainer.show();
+        textareaContainer.style.display = "none";
+        inputContainer.style.display = "unset";        
       }
 
       if (data.style == "block") {
