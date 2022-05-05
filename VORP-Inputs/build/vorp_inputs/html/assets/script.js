@@ -27,7 +27,7 @@ $(function () {
         }
       }
 
-      if (textareaContainer.is(":visible")) {
+      if (textareaContainer.offsetParent) {
         $("#inpTextarea").focus();
       } else {
         $("#inputUser").focus();
