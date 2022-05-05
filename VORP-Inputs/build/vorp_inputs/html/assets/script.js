@@ -4,10 +4,10 @@ $(function () {
       const data = event.data;
       document.body.style.display = data.style;
 
-      const inputEle = document.getElementById("inputUser");
-      const buttonEle = document.getElementById("subButton");
-      const inputContainer = document.getElementById("vorpSingleInput");
-      const textareaContainer = document.getElementById("vorpTextarea");
+      var inputEle = document.getElementById("inputUser");
+      var buttonEle = document.getElementById("subButton");
+      var inputContainer = document.getElementById("vorpSingleInput");
+      var textareaContainer = document.getElementById("vorpTextarea");
 
       if (data.style == "block") {
         buttonEle.innerHTML = data.button;
