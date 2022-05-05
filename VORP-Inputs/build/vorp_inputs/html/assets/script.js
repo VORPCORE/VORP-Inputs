@@ -19,7 +19,7 @@ $(function () {
           inputEle = document.getElementById("inpTextarea");
         } else if (data.inputType == "input") {
           textareaContainer.style.display = "none";
-          inputContainer.style.display = "un";        
+          inputContainer.style.display = "unset";        
         }
 
         for (const key in data?.attributes) {
