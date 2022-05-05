@@ -9,18 +9,18 @@ $(function () {
       const inputContainer = document.getElementById("vorpSingleInput");
       const textareaContainer = document.getElementById("vorpTextarea");
 
-      if (data.inputType == "textarea") {
-        textareaContainer.style.display = "unset";
-        inputContainer.style.display = "none";
-        inputEle = document.getElementById("inpTextarea");
-      } else if (data.inputType == "input") {
-        textareaContainer.style.display = "none";
-        inputContainer.style.display = "unset";        
-      }
-
       if (data.style == "block") {
         buttonEle.innerHTML = data.button;
         inputEle.placeholder = data.placeholder;
+
+        if (data.inputType == "textarea") {
+          textareaContainer.style.display = "unset";
+          inputContainer.style.display = "none";
+          inputEle = document.getElementById("inpTextarea");
+        } else if (data.inputType == "input") {
+          textareaContainer.style.display = "none";
+          inputContainer.style.display = "un";        
+        }
 
         for (const key in data?.attributes) {
           inputEle.setAttribute(`${key}`, `${data.attributes[key]}`);
