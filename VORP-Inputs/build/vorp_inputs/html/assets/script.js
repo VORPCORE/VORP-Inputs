@@ -68,7 +68,7 @@ $(function () {
     $.post(
       "http://vorp_inputs/submit",
       JSON.stringify({
-        stringtext: $("#inputUser").val(),
+        stringtext: fieldValue,
       })
     );
   });
