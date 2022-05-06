@@ -11,4 +11,4 @@ files {
    'Newtonsoft.Json.dll'
 }
 
-ui_page 'html/input.html'
+ui_page 'html/index.html'
