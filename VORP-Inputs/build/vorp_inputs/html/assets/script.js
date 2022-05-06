@@ -4,24 +4,34 @@ $(function () {
       const data = event.data;
       document.body.style.display = data.style;
 
-      const inputEle = document.getElementById("inputUser");
-      const buttonEle = document.getElementById("subButton");
-
-      if (event.data.inputType) {
-        inputEle.type = data.inputType;
-      }
+      var inputEle = document.getElementById("inputUser");
+      var buttonEle = document.getElementById("subButton");
+      var inputContainer = document.getElementById("vorpSingleInput");
+      var textareaContainer = document.getElementById("vorpTextarea");
 
       if (data.style == "block") {
         buttonEle.innerHTML = data.button;
         inputEle.placeholder = data.placeholder;
-        inputEle.value = data?.attributes?.value ?? "";
+
+        if (data.inputType == "textarea") {
+          textareaContainer.style.display = "unset";
+          inputContainer.style.display = "none";
+          inputEle = document.getElementById("inpTextarea");
+        } else if (data.inputType == "input") {
+          textareaContainer.style.display = "none";
+          inputContainer.style.display = "unset";        
+        }
 
         for (const key in data?.attributes) {
           inputEle.setAttribute(`${key}`, `${data.attributes[key]}`);
         }
       }
 
-      $("#inputUser").focus();
+      if (textareaContainer.offsetParent) {
+        $("#inpTextarea").focus();
+      } else {
+        $("#inputUser").focus();
+      }
     }
   });
 
@@ -49,10 +59,16 @@ $(function () {
   $("#formInputs").submit(function (event) {
     //event.preventDefault(); // Prevent form from submitting
 
+    var fieldValue = $("#inputUser").val();
+
+    if ($("#vorpTextarea").is(":visible")) {
+      fieldValue = $("#inpTextarea").val();
+    }
+
     $.post(
       "http://vorp_inputs/submit",
       JSON.stringify({
-        stringtext: $("#inputUser").val(),
+        stringtext: fieldValue,
       })
     );
   });
